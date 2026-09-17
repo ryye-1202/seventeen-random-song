@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVENTEEN Random Song</title>
+</head>
+
+<body>
+
+    <h1>SEVENTEEN</h1>
+    <h2>RANDOM TRACK</h2>
+
+    <p>Your song is...</p>
+
+    <h3 id="song">Press the button</h3>
+
+    <button onclick="randomSong()">🎲 Choose my song</button>
+
+    <script>
+
+        const songs = [
+            {
+                name: "Super",
+                url: "https://open.spotify.com/"
+            },
+            {
+                name: "HOT",
+                url: "https://open.spotify.com/"
+            },
+            {
+                name: "Pretty U",
+                url: "https://open.spotify.com/"
+            },
+            {
+                name: "Rock with You",
+                url: "https://open.spotify.com/"
+            },
+            {
+                name: "God of Music",
+                url: "https://open.spotify.com/"
+            }
+        ];
+
+        function randomSong() {
+
+            const randomIndex = Math.floor(Math.random() * songs.length);
+
+            const song = songs[randomIndex];
+
+            document.getElementById("song").innerHTML =
+                song.name + '<br><br>' +
+                '<a href="' + song.url + '" target="_blank">▶ LISTEN ON SPOTIFY</a>';
+        }
+
+    </script>
+
+</body>
+</html>
