@@ -2,128 +2,615 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>SEVENTEEN — Random Track</title>
 
-    <title>SEVENTEEN Random Song</title>
+    <style>
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(120, 90, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(255, 120, 220, 0.12), transparent 30%),
+                #08080c;
+
+            color: white;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+
+            text-align: center;
+
+            padding: 45px 25px;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 5px;
+            opacity: 0.55;
+
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 12vw, 72px);
+            letter-spacing: -3px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            letter-spacing: 4px;
+
+            opacity: 0.5;
+
+            margin-bottom: 55px;
+        }
+
+        .disc {
+            width: 170px;
+            height: 170px;
+
+            margin: 0 auto 40px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #111 0%,
+                    #111 8%,
+                    #272733 9%,
+                    #101017 18%,
+                    #1b1b24 35%,
+                    #08080c 70%
+                );
+
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.15),
+                0 0 60px rgba(150,120,255,0.15);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: transform 0.15s ease;
+        }
+
+        .disc::after {
+            content: "";
+
+            width: 13px;
+            height: 13px;
+
+            background: #08080c;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 2px rgba(255,255,255,0.15);
+        }
+
+        .disc.spinning {
+            animation: spin 0.55s linear infinite;
+        }
+
+        @keyframes spin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .question {
+            font-size: 12px;
+            letter-spacing: 3px;
+
+            opacity: 0.45;
+
+            margin-bottom: 15px;
+        }
+
+        #song {
+            min-height: 70px;
+
+            font-size: clamp(25px, 7vw, 38px);
+
+            letter-spacing: -1px;
+
+            font-weight: 600;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: opacity 0.2s ease;
+        }
+
+        #artist {
+            min-height: 20px;
+
+            margin-top: 8px;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+
+            opacity: 0.45;
+        }
+
+        button {
+            margin-top: 35px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            background: rgba(255,255,255,0.04);
+
+            color: white;
+
+            padding: 15px 28px;
+
+            border-radius: 100px;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        button:hover {
+            background: rgba(255,255,255,0.1);
+
+            border-color: rgba(255,255,255,0.5);
+
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        #spotify {
+            display: none;
+
+            margin-top: 25px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            opacity: 0.7;
+
+            transition: opacity 0.2s ease;
+        }
+
+        #spotify:hover {
+            opacity: 1;
+        }
+
+        .footer {
+            margin-top: 60px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            opacity: 0.25;
+        }
+
+    </style>
 </head>
 
 
 <body>
 
-    <h1>SEVENTEEN</h1>
+    <main class="container">
 
-    <h2>RANDOM TRACK</h2>
+        <div class="small-title">
+            A LITTLE SOMETHING
+        </div>
 
-    <p>Your song is...</p>
+        <h1>SEVENTEEN</h1>
 
-    <h3 id="song">🎲 Press the button</h3>
-
-    <button onclick="randomSong()">
-        CHOOSE MY SONG
-    </button>
-
-
-    <script>
-
-        const songs = [
-
-            "SUPER",
-            "MAESTRO",
-            "SOS",
-            "THUNDER",
-            "God of Music (Trot Version)",
-            "VERY NICE",
-            "MANSAE",
-            "FIGHTING (BSS)",
-            "DON QUIXOTE",
-            "CHEERS",
-            "CLAP",
-            "_WORLD",
-            "HIT",
-            "RAT RACE",
-            "SINGASONG",
-            "GIRLSNBOYS",
-            "FIESTA",
-            "WORTH IT",
-            "PARTY ROCK",
-            "MI-CHEO MI-CHEO",
-            "PRETTY U",
-            "HOME;RUN",
-            "GOD OF MUSIC",
-            "HOT",
-            "CBZ (PRIME TIME)",
-            "WATER",
-            "BOOMBOOM",
-            "LEFT & RIGHT",
-            "CALL CALL CALL!",
-            "ADORE U",
-            "ROCK WITH YOU",
-            "HEY BUDDY",
-            "TO YOU",
-            "5, 4, 3 (Pretty Woman)"
-
-        ];
+        <div class="subtitle">
+            RANDOM TRACK
+        </div>
 
 
-        let lastSong = null;
+        <div class="disc" id="disc"></div>
 
 
-        function randomSong() {
-
-            let randomIndex;
-
-            let selectedSong;
+        <div class="question">
+            YOUR SONG IS...
+        </div>
 
 
-            // Avoid repeating the same song twice in a row
+        <div id="song">
+            🎲
+        </div>
 
-            do {
+        <div id="artist"></div>
 
-                randomIndex =
-                    Math.floor(Math.random() * songs.length);
 
-                selectedSong = songs[randomIndex];
+        <button onclick="randomSong()">
+            SHUFFLE
+        </button>
 
-            } while (
-                songs.length > 1 &&
-                selectedSong === lastSong
+
+        <br>
+
+
+        <a
+            id="spotify"
+            href="#"
+            target="_blank"
+        >
+            ▶ LISTEN ON SPOTIFY
+        </a>
+
+
+        <div class="footer">
+            13 MEMBERS · 1 RANDOM SONG
+        </div>
+
+    </main>
+
+
+<script>
+
+
+const songs = [
+
+    {
+        name: "SUPER",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "MAESTRO",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "SOS",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "THUNDER",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "God of Music (Trot Version)",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "VERY NICE",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "MANSAE",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "FIGHTING",
+        artist: "BSS"
+    },
+
+    {
+        name: "DON QUIXOTE",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "CHEERS",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "CLAP",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "_WORLD",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "HIT",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "RAT RACE",
+        artist: "V8"
+    },
+
+    {
+        name: "SINGASONG",
+        artist: "V8"
+    },
+
+    {
+        name: "GIRLSNBOYS",
+        artist: "V8"
+    },
+
+    {
+        name: "FIESTA",
+        artist: "CxM"
+    },
+
+    {
+        name: "WORTH IT",
+        artist: "CxM"
+    },
+
+    {
+        name: "PARTY ROCK ROCK",
+        artist: "Picheolin"
+    },
+
+    {
+        name: "MI-CHEO MI-CHEO",
+        artist: "Picheolin"
+    },
+
+    {
+        name: "PRETTY U",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "HOME;RUN",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "GOD OF MUSIC",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "HOT",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "CBZ (PRIME TIME)",
+        artist: "BSS"
+    },
+
+    {
+        name: "WATER",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "BOOMBOOM",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "LEFT & RIGHT",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "CALL CALL CALL!",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "ADORE U",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "ROCK WITH YOU",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "HEY BUDDY",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "TO YOU",
+        artist: "SEVENTEEN"
+    },
+
+    {
+        name: "5, 4, 3 (Pretty woman)",
+        artist: "CxM"
+    }
+
+];
+
+
+let lastSong = null;
+
+
+function randomSong() {
+
+    const disc = document.getElementById("disc");
+
+    const songElement = document.getElementById("song");
+
+    const artistElement = document.getElementById("artist");
+
+    const spotifyElement = document.getElementById("spotify");
+
+
+    disc.classList.add("spinning");
+
+
+    spotifyElement.style.display = "none";
+
+
+    let randomIndex;
+
+    let selectedSong;
+
+
+    do {
+
+        randomIndex =
+            Math.floor(
+                Math.random() * songs.length
             );
 
+        selectedSong =
+            songs[randomIndex];
 
-            lastSong = selectedSong;
+    }
+
+    while (
+        songs.length > 1 &&
+        selectedSong.name === lastSong
+    );
 
 
-            // Create Spotify search link
+    lastSong =
+        selectedSong.name;
+
+
+    /*
+       Shuffle animation
+    */
+
+    let counter = 0;
+
+    const shuffleInterval =
+        setInterval(() => {
+
+            const fakeSong =
+                songs[
+                    Math.floor(
+                        Math.random() * songs.length
+                    )
+                ];
+
+            songElement.style.opacity = "0";
+
+            setTimeout(() => {
+
+                songElement.textContent =
+                    fakeSong.name;
+
+                artistElement.textContent =
+                    fakeSong.artist;
+
+                songElement.style.opacity = "1";
+
+            }, 80);
+
+
+            counter++;
+
+        }, 130);
+
+
+    /*
+       Stop after approximately 1.5 seconds
+    */
+
+    setTimeout(() => {
+
+        clearInterval(shuffleInterval);
+
+        songElement.style.opacity = "0";
+
+
+        setTimeout(() => {
+
+            songElement.textContent =
+                selectedSong.name;
+
+            artistElement.textContent =
+                selectedSong.artist;
+
+            songElement.style.opacity = "1";
+
+
+            disc.classList.remove("spinning");
+
+
+            /*
+               Spotify search
+            */
 
             const spotifySearch =
                 "https://open.spotify.com/search/" +
+
                 encodeURIComponent(
-                    selectedSong + " SEVENTEEN"
+                    selectedSong.name +
+                    " " +
+                    selectedSong.artist
                 );
 
 
-            document.getElementById("song").innerHTML =
+            spotifyElement.href =
+                spotifySearch;
 
-                selectedSong +
 
-                '<br><br>' +
+            spotifyElement.style.display =
+                "inline-block";
 
-                '<a href="' +
-                spotifySearch +
-                '" target="_blank">' +
 
-                '▶ LISTEN ON SPOTIFY' +
+        }, 150);
 
-                '</a>';
 
-        }
+    }, 1500);
 
-    </script>
+}
+
+
+</script>
 
 </body>
 
