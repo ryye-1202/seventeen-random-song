@@ -1,59 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>SEVENTEEN Random Song</title>
+
 </head>
+
 
 <body>
 
     <h1>SEVENTEEN</h1>
+
     <h2>RANDOM TRACK</h2>
 
     <p>Your song is...</p>
 
-    <h3 id="song">Press the button</h3>
+    <h3 id="song">🎲 Press the button</h3>
 
-    <button onclick="randomSong()">🎲 Choose my song</button>
+    <button onclick="randomSong()">
+        CHOOSE MY SONG
+    </button>
+
 
     <script>
 
         const songs = [
-            {
-                name: "Super",
-                url: "https://open.spotify.com/"
-            },
-            {
-                name: "HOT",
-                url: "https://open.spotify.com/"
-            },
-            {
-                name: "Pretty U",
-                url: "https://open.spotify.com/"
-            },
-            {
-                name: "Rock with You",
-                url: "https://open.spotify.com/"
-            },
-            {
-                name: "God of Music",
-                url: "https://open.spotify.com/"
-            }
+
+            "SUPER",
+            "MAESTRO",
+            "SOS",
+            "THUNDER",
+            "God of Music (Trot Version)",
+            "VERY NICE",
+            "MANSAE",
+            "FIGHTING (BSS)",
+            "DON QUIXOTE",
+            "CHEERS",
+            "CLAP",
+            "_WORLD",
+            "HIT",
+            "RAT RACE",
+            "SINGASONG",
+            "GIRLSNBOYS",
+            "FIESTA",
+            "WORTH IT",
+            "PARTY ROCK",
+            "MI-CHEO MI-CHEO",
+            "PRETTY U",
+            "HOME;RUN",
+            "GOD OF MUSIC",
+            "HOT",
+            "CBZ (PRIME TIME)",
+            "WATER",
+            "BOOMBOOM",
+            "LEFT & RIGHT",
+            "CALL CALL CALL!",
+            "ADORE U",
+            "ROCK WITH YOU",
+            "HEY BUDDY",
+            "TO YOU",
+            "5, 4, 3 (Pretty Woman)"
+
         ];
+
+
+        let lastSong = null;
+
 
         function randomSong() {
 
-            const randomIndex = Math.floor(Math.random() * songs.length);
+            let randomIndex;
 
-            const song = songs[randomIndex];
+            let selectedSong;
+
+
+            // Avoid repeating the same song twice in a row
+
+            do {
+
+                randomIndex =
+                    Math.floor(Math.random() * songs.length);
+
+                selectedSong = songs[randomIndex];
+
+            } while (
+                songs.length > 1 &&
+                selectedSong === lastSong
+            );
+
+
+            lastSong = selectedSong;
+
+
+            // Create Spotify search link
+
+            const spotifySearch =
+                "https://open.spotify.com/search/" +
+                encodeURIComponent(
+                    selectedSong + " SEVENTEEN"
+                );
+
 
             document.getElementById("song").innerHTML =
-                song.name + '<br><br>' +
-                '<a href="' + song.url + '" target="_blank">▶ LISTEN ON SPOTIFY</a>';
+
+                selectedSong +
+
+                '<br><br>' +
+
+                '<a href="' +
+                spotifySearch +
+                '" target="_blank">' +
+
+                '▶ LISTEN ON SPOTIFY' +
+
+                '</a>';
+
         }
 
     </script>
 
 </body>
+
 </html>
