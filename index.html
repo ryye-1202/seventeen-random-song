@@ -3,339 +3,672 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>SEVENTEEN — Random Track</title>
+<title>SEVENTEEN — Random Track</title>
 
 
-    <style>
+<!-- Handwritten-style font -->
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-        body {
 
-            min-height: 100vh;
+<style>
 
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(120, 90, 255, 0.18),
-                    transparent 30%
-                ),
+/* =====================================================
+   COLOURS
+   ===================================================== */
 
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(255, 120, 220, 0.12),
-                    transparent 30%
-                ),
+:root {
 
-                #08080c;
+    --rose: #e9a7bd;
 
-            color: white;
+    --rose-light: #f4c9d8;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+    --serenity: #8eb5d3;
 
-            display: flex;
+    --serenity-light: #b8d0e3;
 
-            justify-content: center;
+    --lavender: #b5a8d8;
 
-            align-items: center;
+    --cream: #fff8f5;
 
-            overflow: hidden;
-        }
+    --dark-blue: #242d48;
 
+    --deep: #171a2d;
 
-        .container {
+}
 
-            width: 90%;
 
-            max-width: 500px;
+/* =====================================================
+   GENERAL
+   ===================================================== */
 
-            text-align: center;
+* {
 
-            padding: 45px 25px;
-        }
+    box-sizing: border-box;
 
+    margin: 0;
 
-        .small-title {
+    padding: 0;
 
-            font-size: 11px;
+}
 
-            letter-spacing: 5px;
 
-            opacity: 0.55;
+body {
 
-            margin-bottom: 18px;
-        }
+    min-height: 100vh;
 
+    color: var(--cream);
 
-        h1 {
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
 
-            font-size:
-                clamp(42px, 12vw, 72px);
 
-            letter-spacing: -3px;
+    background:
 
-            font-weight: 700;
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(233,167,189,0.45),
+            transparent 32%
+        ),
 
-            margin-bottom: 8px;
-        }
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(142,181,211,0.42),
+            transparent 32%
+        ),
 
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(181,168,216,0.30),
+            transparent 42%
+        ),
 
-        .subtitle {
+        linear-gradient(
+            135deg,
+            #353c5d,
+            #252c48 45%,
+            #20243b
+        );
 
-            font-size: 12px;
 
-            letter-spacing: 4px;
+    display: flex;
 
-            opacity: 0.5;
+    justify-content: center;
 
-            margin-bottom: 55px;
-        }
+    align-items: center;
 
+    overflow: hidden;
 
-        .disc {
+    position: relative;
 
-            width: 170px;
+}
 
-            height: 170px;
 
-            margin: 0 auto 40px;
+/* subtle paper/light texture */
 
-            border-radius: 50%;
+body::before {
 
-            background:
+    content: "";
 
-                radial-gradient(
-                    circle,
+    position: fixed;
 
-                    #111 0%,
-                    #111 8%,
+    inset: 0;
 
-                    #272733 9%,
+    pointer-events: none;
 
-                    #101017 18%,
+    opacity: 0.08;
 
-                    #1b1b24 35%,
+    background-image:
 
-                    #08080c 70%
-                );
+        radial-gradient(
+            rgba(255,255,255,0.8) 0.6px,
+            transparent 0.6px
+        );
 
+    background-size: 5px 5px;
 
-            box-shadow:
+}
 
-                0 0 0 1px
-                rgba(255,255,255,0.15),
 
-                0 0 60px
-                rgba(150,120,255,0.15);
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
 
+.container {
 
-            display: flex;
+    width: 90%;
 
-            justify-content: center;
+    max-width: 520px;
 
-            align-items: center;
+    text-align: center;
 
+    padding: 40px 25px;
 
-            transition:
-                transform 0.15s ease;
-        }
+    position: relative;
 
+    z-index: 2;
 
-        .disc::after {
+}
 
-            content: "";
 
-            width: 13px;
+/* =====================================================
+   SMALL HANDWRITTEN TEXT
+   ===================================================== */
 
-            height: 13px;
+.small-title {
 
-            background: #08080c;
+    font-family:
+        "Caveat",
+        cursive;
 
-            border-radius: 50%;
+    font-size: 25px;
 
-            box-shadow:
+    font-weight: 500;
 
-                0 0 0 2px
-                rgba(255,255,255,0.15);
-        }
+    letter-spacing: 1px;
 
+    color: var(--rose-light);
 
-        .disc.spinning {
+    margin-bottom: 5px;
 
-            animation:
-                spin 0.55s linear infinite;
-        }
+    transform: rotate(-2deg);
 
+}
 
-        @keyframes spin {
 
-            from {
-                transform: rotate(0deg);
-            }
+/* =====================================================
+   MAIN TITLE
+   ===================================================== */
 
-            to {
-                transform: rotate(360deg);
-            }
+h1 {
 
-        }
+    font-family:
+        "Manrope",
+        sans-serif;
 
+    font-size:
+        clamp(45px, 13vw, 78px);
 
-        .question {
+    line-height: 0.95;
 
-            font-size: 12px;
+    letter-spacing: -4px;
 
-            letter-spacing: 3px;
+    font-weight: 800;
 
-            opacity: 0.45;
+    color: white;
 
-            margin-bottom: 15px;
-        }
+    margin-bottom: 10px;
 
+}
 
-        #song {
 
-            min-height: 70px;
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
 
-            font-size:
-                clamp(25px, 7vw, 38px);
+.subtitle {
 
-            letter-spacing: -1px;
+    font-family:
+        "Caveat",
+        cursive;
 
-            font-weight: 600;
+    font-size: 24px;
 
-            display: flex;
+    letter-spacing: 2px;
 
-            align-items: center;
+    color: var(--serenity-light);
 
-            justify-content: center;
+    margin-bottom: 45px;
 
-            transition:
-                opacity 0.2s ease;
-        }
+}
 
 
-        #artist {
+/* =====================================================
+   CD
+   ===================================================== */
 
-            min-height: 20px;
+.disc {
 
-            margin-top: 8px;
+    width: 190px;
 
-            font-size: 11px;
+    height: 190px;
 
-            letter-spacing: 2px;
+    margin: 0 auto 42px;
 
-            opacity: 0.45;
-        }
+    border-radius: 50%;
 
+    position: relative;
 
-        button {
+    background:
 
-            margin-top: 35px;
+        radial-gradient(
+            circle at 48% 45%,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.55) 2%,
+            transparent 3%
+        ),
 
-            border:
-                1px solid
-                rgba(255,255,255,0.25);
+        conic-gradient(
+            from 0deg,
 
-            background:
-                rgba(255,255,255,0.04);
+            #d8a7bb,
+            #a9c5d9,
+            #e4d4a8,
+            #a8c3df,
+            #d8a7c7,
+            #e8c7a8,
+            #9ebbd8,
+            #d9a8bd,
+            #d8a7bb
+        );
 
-            color: white;
 
-            padding: 15px 28px;
+    box-shadow:
 
-            border-radius: 100px;
+        inset
+        0 0 0 1px
+        rgba(255,255,255,0.65),
 
-            font-size: 11px;
+        inset
+        0 0 25px
+        rgba(255,255,255,0.45),
 
-            letter-spacing: 3px;
+        0 12px 45px
+        rgba(10,15,35,0.35),
 
-            cursor: pointer;
+        0 0 50px
+        rgba(233,167,189,0.22);
 
-            transition:
 
-                background 0.2s ease,
+    display: flex;
 
-                transform 0.2s ease,
+    justify-content: center;
 
-                border-color 0.2s ease;
-        }
+    align-items: center;
 
+    transition:
+        transform 0.15s ease;
 
-        button:hover {
+}
 
-            background:
-                rgba(255,255,255,0.1);
 
-            border-color:
-                rgba(255,255,255,0.5);
+/* CD radial lines */
 
-            transform:
-                translateY(-2px);
-        }
+.disc::before {
 
+    content: "";
 
-        button:active {
+    position: absolute;
 
-            transform:
-                scale(0.96);
-        }
+    inset: 7px;
 
+    border-radius: 50%;
 
-        #spotify {
+    background:
 
-            display: none;
+        repeating-radial-gradient(
+            circle,
+            transparent 0px,
+            transparent 9px,
+            rgba(255,255,255,0.12) 10px,
+            transparent 11px
+        );
 
-            margin-top: 25px;
+    mix-blend-mode: overlay;
 
-            color: white;
+}
 
-            text-decoration: none;
 
-            font-size: 10px;
+/* CD reflection */
 
-            letter-spacing: 2px;
+.disc::after {
 
-            opacity: 0.7;
+    content: "";
 
-            transition:
-                opacity 0.2s ease;
-        }
+    position: absolute;
 
+    inset: 8px;
 
-        #spotify:hover {
+    border-radius: 50%;
 
-            opacity: 1;
-        }
+    background:
 
+        linear-gradient(
+            125deg,
+            transparent 15%,
+            rgba(255,255,255,0.65) 25%,
+            rgba(255,255,255,0.08) 32%,
+            transparent 42%,
+            transparent 68%,
+            rgba(255,255,255,0.45) 75%,
+            transparent 82%
+        );
 
-        .footer {
+    opacity: 0.75;
 
-            margin-top: 60px;
+}
 
-            font-size: 9px;
 
-            letter-spacing: 2px;
+/* centre hole */
 
-            opacity: 0.25;
-        }
+.disc {
 
+    isolation: isolate;
 
-    </style>
+}
+
+
+.disc .center {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #555a70;
+
+    border: 3px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+        inset 0 0 6px rgba(0,0,0,0.4);
+
+    z-index: 5;
+
+}
+
+
+.disc.spinning {
+
+    animation:
+        spin 0.55s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   QUESTION
+   ===================================================== */
+
+.question {
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 23px;
+
+    letter-spacing: 1px;
+
+    color: var(--rose-light);
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =====================================================
+   SONG
+   ===================================================== */
+
+#song {
+
+    min-height: 72px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(25px, 7vw, 40px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 800;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+/* =====================================================
+   ARTIST
+   ===================================================== */
+
+#artist {
+
+    min-height: 25px;
+
+    margin-top: 7px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 21px;
+
+    letter-spacing: 1px;
+
+    color: var(--serenity-light);
+
+}
+
+
+/* =====================================================
+   BUTTON
+   ===================================================== */
+
+button {
+
+    margin-top: 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.55);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(233,167,189,0.28),
+            rgba(142,181,211,0.22)
+        );
+
+    color: white;
+
+    padding: 14px 32px;
+
+    border-radius: 100px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(10,15,35,0.15);
+
+    transition:
+
+        transform 0.2s ease,
+
+        background 0.2s ease,
+
+        box-shadow 0.2s ease;
+}
+
+
+button:hover {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(233,167,189,0.45),
+            rgba(142,181,211,0.38)
+        );
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(10,15,35,0.22);
+
+}
+
+
+button:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* =====================================================
+   SPOTIFY
+   ===================================================== */
+
+#spotify {
+
+    display: none;
+
+    margin-top: 24px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 21px;
+
+    letter-spacing: 1px;
+
+    transition:
+        opacity 0.2s ease,
+
+        transform 0.2s ease;
+}
+
+
+#spotify:hover {
+
+    opacity: 0.7;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+
+    margin-top: 55px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 450px) {
+
+    .disc {
+
+        width: 165px;
+
+        height: 165px;
+
+    }
+
+    .subtitle {
+
+        margin-bottom: 35px;
+
+    }
+
+    .footer {
+
+        margin-top: 45px;
+
+    }
+
+}
+
+</style>
 
 </head>
+
 
 
 <body>
@@ -345,55 +678,45 @@
 
 
     <div class="small-title">
-
-        A LITTLE SOMETHING
-
+        a little something
     </div>
 
 
     <h1>
-
         SEVENTEEN
-
     </h1>
 
 
     <div class="subtitle">
-
-        RANDOM TRACK
-
+        random track
     </div>
 
 
     <div
         class="disc"
         id="disc"
-    ></div>
+    >
 
-
-    <div class="question">
-
-        YOUR SONG IS...
+        <div class="center"></div>
 
     </div>
 
 
+    <div class="question">
+        your song is...
+    </div>
+
+
     <div id="song">
-
         🎲
-
     </div>
 
 
     <div id="artist"></div>
 
 
-    <button
-        onclick="randomSong()"
-    >
-
+    <button onclick="randomSong()">
         SHUFFLE
-
     </button>
 
 
@@ -405,16 +728,12 @@
         href="#"
         target="_blank"
     >
-
-        ▶ LISTEN ON SPOTIFY
-
+        ▶ listen on spotify
     </a>
 
 
     <div class="footer">
-
-        34 POSSIBILITIES · 1 RANDOM SONG
-
+        34 possibilities · 1 random song
     </div>
 
 
@@ -426,224 +745,216 @@
 
 
 /* =====================================================
-   SONG LIST
+   SONG DATABASE
    ===================================================== */
-
 
 const songs = [
 
-
     {
         name: "SUPER",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/SUPER%20SEVENTEEN"
     },
-
 
     {
         name: "MAESTRO",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/2UE9XGbAzicJIyo4bB6sqM"
     },
-
 
     {
         name: "SOS",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/3oTDi9MWC0JB39FcsLRon3"
     },
-
 
     {
         name: "THUNDER",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/0qkYuCno3SoU8vxkCdx0iJ"
     },
-
 
     {
         name: "God of Music (Trot Remix)",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/album/2tVPLB5F9IsgPn4mvLQ7RJ"
     },
-
 
     {
         name: "VERY NICE",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/3nAUdBQxle8l1EeOxW3m0R"
     },
-
 
     {
         name: "MANSAE",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/5rIsrawNyPv1q8v11iwJsh"
     },
-
 
     {
         name: "FIGHTING",
-        artist: "BSS"
+        artist: "BSS · Lee Young Ji",
+        url: "https://open.spotify.com/track/7eBpUuPnDTfbeP1P4P93CS"
     },
-
 
     {
         name: "DON QUIXOTE",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/DON%20QUIXOTE%20SEVENTEEN"
     },
-
 
     {
         name: "CHEERS",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/1pdFdv8R6ezIAUUNkn785b"
     },
-
 
     {
         name: "CLAP",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/0pIJiHChaM9jlrlPCAP4aI"
     },
-
 
     {
         name: "_WORLD",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/2TLzrymJ9lpH2wXp1ub5Aj"
     },
-
 
     {
         name: "HIT",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/45jemzjdLd7OQFaDAqKNTD"
     },
-
 
     {
         name: "rat race",
-        artist: "THE 8, Vernon"
+        artist: "THE 8 · Vernon",
+        url: "https://open.spotify.com/search/rat%20race%20THE%208%20Vernon"
     },
-
 
     {
         name: "singasong",
-        artist: "THE 8, Vernon"
+        artist: "THE 8 · Vernon",
+        url: "https://open.spotify.com/track/1uDVTuH0e2XaMPsX3yox1T"
     },
-
 
     {
         name: "girlsnboys",
-        artist: "THE 8, Vernon"
+        artist: "THE 8 · Vernon",
+        url: "https://open.spotify.com/search/girlsnboys%20THE%208%20Vernon"
     },
-
 
     {
         name: "Fiesta",
-        artist: "CxM"
+        artist: "CxM",
+        url: "https://open.spotify.com/track/0ANyGUmVsiCjLQWhAuCl9Q"
     },
-
 
     {
         name: "Worth it",
-        artist: "CxM"
+        artist: "CxM",
+        url: "https://open.spotify.com/track/04f4d0aG5ckrLifRzlv93z"
     },
-
 
     {
         name: "Party Rock Rock",
-        artist: "Picheolin"
+        artist: "Picheolin",
+        url: "https://open.spotify.com/search/Party%20Rock%20Rock%20Picheolin"
     },
-
 
     {
         name: "Mi-cheo Mi-cheo",
-        artist: "Picheolin"
+        artist: "Picheolin",
+        url: "https://open.spotify.com/search/Mi-cheo%20Mi-cheo%20Picheolin"
     },
-
 
     {
         name: "PRETTY U",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/1117juaaAkSIUsQxTmmcKM"
     },
-
 
     {
         name: "HOME;RUN",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/HOME%3BRUN%20SEVENTEEN"
     },
-
 
     {
         name: "GOD OF MUSIC",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/4MTNimMDRyFZv37Thcktwa"
     },
-
 
     {
         name: "HOT",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/6I2tqFhk8tq69iursYxuxd"
     },
-
 
     {
         name: "CBZ (Prime time)",
-        artist: "BSS"
+        artist: "BSS",
+        url: "https://open.spotify.com/track/0ofqcEBPdlyczRjUhjCiIS"
     },
-
 
     {
         name: "Water",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/1DQGGkXu9SIwWiK5uuBvcO"
     },
-
 
     {
         name: "BOOMBOOM",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/0pWxUlYb3EM2WkcTJfwBdP"
     },
-
 
     {
-        name: "Left & Right",
-        artist: "SEVENTEEN"
+        name: "LEFT & RIGHT",
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/065yxZRBAsenRLZacB1uc2"
     },
-
 
     {
         name: "CALL CALL CALL!",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/28teoB4Tqk3Oh3YrLnM4uh"
     },
-
 
     {
-        name: "Adore U",
-        artist: "SEVENTEEN"
+        name: "ADORE U",
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/Adore%20U%20SEVENTEEN"
     },
-
 
     {
-        name: "Rock with you",
-        artist: "SEVENTEEN"
+        name: "ROCK WITH YOU",
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/Rock%20with%20you%20SEVENTEEN"
     },
-
 
     {
         name: "HEY BUDDY",
-        artist: "SEVENTEEN"
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/search/HEY%20BUDDY%20SEVENTEEN"
     },
 
-
     {
-        name: "To you",
-        artist: "SEVENTEEN"
+        name: "TO YOU",
+        artist: "SEVENTEEN",
+        url: "https://open.spotify.com/track/25osmdhvjltPlN7gI2Javd"
     },
 
-
     {
-        name: "5, 4, 3 (Pretty woman) (feat. Lay Bankz)",
-        artist: "CxM"
+        name: "5, 4, 3 (Pretty woman)",
+        artist: "CxM · Flo Milli",
+        url: "https://open.spotify.com/album/6qxyTq7gYw1859Dm64yzVM"
     }
 
-
 ];
-
-
-
-/* =====================================================
-   PREVIOUS SONG
-   ===================================================== */
 
 
 let lastSong = null;
@@ -651,9 +962,8 @@ let lastSong = null;
 
 
 /* =====================================================
-   RANDOM SONG FUNCTION
+   RANDOM SONG
    ===================================================== */
-
 
 function randomSong() {
 
@@ -674,27 +984,11 @@ function randomSong() {
         document.getElementById("spotify");
 
 
-    /*
-       Start disc animation
-    */
-
-
     disc.classList.add("spinning");
-
-
-    /*
-       Hide Spotify button
-    */
 
 
     spotifyElement.style.display =
         "none";
-
-
-    /*
-       Select a random song
-       but don't repeat the previous one
-    */
 
 
     let randomIndex;
@@ -704,18 +998,14 @@ function randomSong() {
 
     do {
 
-
         randomIndex =
             Math.floor(
-                Math.random()
-                *
+                Math.random() *
                 songs.length
             );
 
-
         selectedSong =
             songs[randomIndex];
-
 
     }
 
@@ -723,8 +1013,7 @@ function randomSong() {
 
         songs.length > 1 &&
 
-        selectedSong.name
-        ===
+        selectedSong.name ===
         lastSong
 
     );
@@ -739,10 +1028,6 @@ function randomSong() {
        SHUFFLE ANIMATION
        ================================================= */
 
-
-    let counter = 0;
-
-
     const shuffleInterval =
 
         setInterval(() => {
@@ -752,8 +1037,7 @@ function randomSong() {
 
                 songs[
                     Math.floor(
-                        Math.random()
-                        *
+                        Math.random() *
                         songs.length
                     )
                 ];
@@ -781,17 +1065,13 @@ function randomSong() {
             }, 80);
 
 
-            counter++;
-
-
         }, 130);
 
 
 
     /* =================================================
-       STOP SHUFFLING
+       FINAL RESULT
        ================================================= */
-
 
     setTimeout(() => {
 
@@ -808,11 +1088,6 @@ function randomSong() {
         setTimeout(() => {
 
 
-            /*
-               Show final song
-            */
-
-
             songElement.textContent =
                 selectedSong.name;
 
@@ -825,40 +1100,13 @@ function randomSong() {
                 "1";
 
 
-            /*
-               Stop disc
-            */
-
-
             disc.classList.remove(
                 "spinning"
             );
 
 
-
-            /* =========================================
-               SPOTIFY LINK
-               ========================================= */
-
-
-            const spotifySearch =
-
-                "https://open.spotify.com/search/"
-                +
-
-                encodeURIComponent(
-
-                    selectedSong.name
-                    +
-                    " "
-                    +
-                    selectedSong.artist
-
-                );
-
-
             spotifyElement.href =
-                spotifySearch;
+                selectedSong.url;
 
 
             spotifyElement.style.display =
@@ -870,12 +1118,10 @@ function randomSong() {
 
     }, 1500);
 
-
 }
 
 
 </script>
-
 
 </body>
 
