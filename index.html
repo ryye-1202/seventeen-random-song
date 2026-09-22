@@ -1,1811 +1,1607 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f8f5f2">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<title>A little something for you ♡</title>
 
-<title>For You — SEVENTEEN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-<!-- ==================================================
-     FONTS
-================================================== -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
-
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-
-/* ==================================================
-   COLOUR PALETTE
-   Rose Quartz + Serenity
-================================================== */
-
 :root {
-
-    --rose:
-        #F7CAC9;
-
-    --rose-soft:
-        #FBE5E5;
-
-    --rose-deep:
-        #D99EAD;
-
-    --serenity:
-        #91A8D0;
-
-    --serenity-soft:
-        #DCE5F3;
-
-    --blue-text:
-        #536581;
-
-    --blue-deep:
-        #465572;
-
-    --lavender:
-        #C9C7E4;
-
-    --cream:
-        #FFFDFB;
-
-    --white:
-        #FFFFFF;
-
+    --rose: #f7cac9;
+    --rose-soft: #f9dfdf;
+    --serenity: #91a8d0;
+    --blue-soft: #dce5f3;
+    --cream: #faf8f5;
+    --ink: #5b5265;
+    --ink-soft: #827889;
+    --white: #ffffff;
 }
-
-
-/* ==================================================
-   RESET
-================================================== */
 
 * {
-
-    box-sizing:
-        border-box;
-
-    margin:
-        0;
-
-    padding:
-        0;
-
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
-
-/* ==================================================
-   BODY
-================================================== */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
 
 body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
 
-    min-height:
-        100vh;
-
-    color:
-        var(--blue-deep);
-
-    font-family:
-        "Manrope",
-        sans-serif;
+    font-family: "Manrope", sans-serif;
+    color: var(--ink);
 
     background:
-
         radial-gradient(
-            circle at 10% 10%,
-            rgba(247,202,201,0.80),
+            circle at 12% 15%,
+            rgba(247, 202, 201, 0.48),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(145, 168, 208, 0.35),
             transparent 32%
         ),
-
         radial-gradient(
-            circle at 90% 15%,
-            rgba(145,168,208,0.75),
-            transparent 34%
-        ),
-
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(201,199,228,0.65),
-            transparent 42%
-        ),
-
-        linear-gradient(
-            135deg,
-            #FFFDFB 0%,
-            #FDF8FA 48%,
-            #F5F8FC 100%
-        );
-
-    overflow:
-        hidden;
-
-}
-
-
-/* ==================================================
-   SOFT PAPER TEXTURE
-================================================== */
-
-body::before {
-
-    content:
-        "";
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    pointer-events:
-        none;
-
-    opacity:
-        0.20;
-
-    background-image:
-
-        radial-gradient(
-            rgba(83,101,129,0.18) 0.5px,
-            transparent 0.5px
-        );
-
-    background-size:
-        6px 6px;
-
-    z-index:
-        0;
-
-}
-
-
-/* ==================================================
-   PAGE
-================================================== */
-
-.page {
-
-    min-height:
-        100vh;
-
-    width:
-        100%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    position:
-        relative;
-
-    z-index:
-        1;
-
-}
-
-
-/* ==================================================
-   INTRO SCREEN
-================================================== */
-
-#intro {
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    z-index:
-        100;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(247,202,201,0.80),
+            circle at 55% 90%,
+            rgba(247, 202, 201, 0.25),
             transparent 35%
         ),
+        var(--cream);
+}
 
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(247, 202, 201, 0.42),
+            transparent 32%
+        ),
         radial-gradient(
             circle at 80% 75%,
-            rgba(145,168,208,0.75),
-            transparent 38%
+            rgba(145, 168, 208, 0.35),
+            transparent 35%
         ),
+        #fbf9f6;
 
+    transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease;
+}
+
+.intro-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    width: min(500px, 100%);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: introAppear 1.1s ease both;
+}
+
+.intro-small {
+    margin-bottom: 7px;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(25px, 6vw, 34px);
+    font-weight: 500;
+
+    color: #817485;
+}
+
+.intro-main {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(13px, 3.5vw, 15px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #776c7e;
+}
+
+.intro-sub {
+    margin-top: 12px;
+    margin-bottom: 32px;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(20px, 5vw, 25px);
+
+    color: #918494;
+}
+
+.intro-cd-wrapper {
+    position: relative;
+
+    width: min(290px, 68vw);
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+.intro-cd-wrapper::before {
+    content: "";
+
+    position: absolute;
+    inset: 8%;
+
+    border-radius: 50%;
+
+    background: rgba(247, 202, 201, 0.22);
+
+    filter: blur(28px);
+}
+
+.intro-cd {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255,255,255,0.95) 0 3%,
+            transparent 11%
+        ),
+        conic-gradient(
+            from 10deg,
+            #f7cac9,
+            #f2e2ea,
+            #b9c9e3,
+            #e8d9ec,
+            #f7cac9,
+            #d9e6ef,
+            #f6d5d5,
+            #c6d6ec,
+            #f7cac9
+        );
+
+    box-shadow:
+        0 22px 50px rgba(91, 82, 101, 0.16),
+        inset 0 0 25px rgba(255,255,255,0.65),
+        inset 0 0 3px rgba(91,82,101,0.22);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.intro-cd::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0px,
+            transparent 7px,
+            rgba(255,255,255,0.18) 8px,
+            transparent 10px
+        );
+
+    opacity: 0.72;
+}
+
+.intro-cd::after {
+    content: "";
+
+    position: absolute;
+    inset: 7%;
+
+    border-radius: 50%;
+
+    background:
         linear-gradient(
             135deg,
-            #FFFDFB,
-            #F9F4F7 48%,
-            #F1F6FB
+            rgba(255,255,255,0.75) 0%,
+            rgba(255,255,255,0.05) 25%,
+            transparent 40%,
+            rgba(255,255,255,0.35) 72%,
+            transparent 100%
         );
+
+    mix-blend-mode: screen;
+}
+
+.cd-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 23%;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #faf8f5 0 20%,
+            rgba(255,255,255,0.9) 21% 34%,
+            rgba(100,90,110,0.22) 35% 37%,
+            transparent 38%
+        );
+
+    box-shadow:
+        0 1px 3px rgba(91,82,101,0.18),
+        inset 0 0 4px rgba(255,255,255,0.8);
+
+    z-index: 4;
+}
+
+.cd-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(22px, 6vw, 31px);
+
+    color: rgba(91,82,101,0.74);
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.intro-cd-wrapper:hover .intro-cd {
+    transform: scale(1.035) rotate(4deg);
+
+    box-shadow:
+        0 28px 60px rgba(91, 82, 101, 0.2),
+        inset 0 0 25px rgba(255,255,255,0.7);
+}
+
+.intro-hint {
+    margin-top: 30px;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(22px, 5.5vw, 27px);
+
+    color: #817485;
+
+    animation: softPulse 2.2s ease-in-out infinite;
+}
+
+.intro-detail {
+    margin-top: 5px;
+
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+
+    color: #a29aa7;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        max(35px, env(safe-area-inset-top))
+        20px
+        max(35px, env(safe-area-inset-bottom));
+
+    opacity: 0;
+    visibility: hidden;
 
     transition:
         opacity 0.8s ease,
         visibility 0.8s ease;
-
 }
 
-
-#intro.hidden {
-
-    opacity:
-        0;
-
-    visibility:
-        hidden;
-
-    pointer-events:
-        none;
-
+.main.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
+.card {
+    width: min(520px, 100%);
 
-/* ==================================================
-   INTRO CONTENT
-================================================== */
-
-.intro-content {
-
-    width:
-        90%;
-
-    max-width:
-        500px;
-
-    text-align:
-        center;
-
+    text-align: center;
 }
 
+.eyebrow {
+    margin-bottom: 4px;
 
-/* ==================================================
-   INTRO SMALL TEXT
-================================================== */
+    font-family: "Caveat", cursive;
+    font-size: clamp(22px, 5vw, 27px);
 
-.intro-note {
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        25px;
-
-    color:
-        var(--rose-deep);
-
-    transform:
-        rotate(-2deg);
-
-    margin-bottom:
-        5px;
-
+    color: #8b7d8f;
 }
 
+.title {
+    margin: 0;
 
-/* ==================================================
-   INTRO TITLE
-================================================== */
+    font-size: clamp(11px, 3vw, 13px);
+    font-weight: 600;
 
-.intro-title {
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
 
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(42px, 12vw, 70px);
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -4px;
-
-    line-height:
-        0.95;
-
-    color:
-        var(--blue-deep);
-
+    color: #75697b;
 }
 
+.cd-area {
+    position: relative;
 
-/* ==================================================
-   INTRO SUBTITLE
-================================================== */
+    width: min(315px, 73vw);
+    aspect-ratio: 1;
 
-.intro-subtitle {
+    margin: 28px auto 25px;
 
-    margin-top:
-        14px;
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        25px;
-
-    color:
-        var(--blue-text);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.cd {
+    position: relative;
 
-/* ==================================================
-   INTRO CD
-================================================== */
+    width: 100%;
+    height: 100%;
 
-.intro-disc {
-
-    width:
-        215px;
-
-    height:
-        215px;
-
-    margin:
-        45px auto 32px;
-
-    position:
-        relative;
-
-    border-radius:
-        50%;
-
-    cursor:
-        pointer;
+    border-radius: 50%;
 
     background:
-
         radial-gradient(
-            circle at 48% 47%,
-            rgba(255,255,255,0.95) 0%,
-            rgba(255,255,255,0.75) 2%,
-            transparent 3%
+            circle at 32% 27%,
+            rgba(255,255,255,0.96) 0 3%,
+            transparent 13%
         ),
-
         conic-gradient(
-            from 10deg,
-
-            #F7CAC9,
-            #E9D1DD,
-            #AFC2DE,
-            #91A8D0,
-            #D4D0E7,
-            #F6D9D7,
-            #A7BEDD,
-            #E9BFCB,
-            #F7CAC9
+            from 15deg,
+            #f7cac9 0deg,
+            #eaddea 45deg,
+            #aebfdf 90deg,
+            #f3dce4 140deg,
+            #f7cac9 180deg,
+            #d3e2ed 220deg,
+            #e6d7e9 265deg,
+            #f3cfd3 315deg,
+            #f7cac9 360deg
         );
 
-
     box-shadow:
+        0 24px 55px rgba(91,82,101,0.18),
+        inset 0 0 30px rgba(255,255,255,0.62),
+        inset 0 0 3px rgba(91,82,101,0.25);
 
-        inset
-        0 0 0 1px
-        rgba(255,255,255,0.90),
-
-        inset
-        0 0 25px
-        rgba(255,255,255,0.70),
-
-        0 15px 45px
-        rgba(83,101,129,0.20),
-
-        0 0 60px
-        rgba(247,202,201,0.30);
-
-
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
-
+    transition: transform 0.5s ease;
 }
 
+.cd::before {
+    content: "";
 
-/* ==================================================
-   CD RINGS
-================================================== */
+    position: absolute;
+    inset: 0;
 
-.intro-disc::before,
-.main-disc::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        7px;
-
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
-
         repeating-radial-gradient(
-            circle,
-
-            transparent 0px,
-            transparent 8px,
-
-            rgba(255,255,255,0.25) 9px,
-
+            circle at center,
+            transparent 0,
+            transparent 7px,
+            rgba(255,255,255,0.18) 8px,
             transparent 10px
         );
 
-    mix-blend-mode:
-        overlay;
-
+    opacity: 0.8;
 }
 
+.cd::after {
+    content: "";
 
-/* ==================================================
-   CD REFLECTION
-================================================== */
+    position: absolute;
+    inset: 6%;
 
-.intro-disc::after,
-.main-disc::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        7px;
-
-    border-radius:
-        50%;
-
-    background:
-
-        linear-gradient(
-            125deg,
-
-            transparent 15%,
-
-            rgba(255,255,255,0.80) 25%,
-
-            rgba(255,255,255,0.15) 33%,
-
-            transparent 42%,
-
-            transparent 65%,
-
-            rgba(255,255,255,0.55) 74%,
-
-            transparent 83%
-        );
-
-    opacity:
-        0.75;
-
-}
-
-
-/* ==================================================
-   CD CENTRE
-================================================== */
-
-.disc-centre {
-
-    position:
-        absolute;
-
-    width:
-        26px;
-
-    height:
-        26px;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
         linear-gradient(
-            145deg,
-            #ffffff,
-            #D5D9E2
+            130deg,
+            rgba(255,255,255,0.8),
+            transparent 21%,
+            transparent 44%,
+            rgba(255,255,255,0.28) 62%,
+            transparent 72%
         );
 
-    border:
-        3px solid
-        rgba(255,255,255,0.85);
-
-    box-shadow:
-
-        inset
-        0 2px 4px
-        rgba(83,101,129,0.30),
-
-        0 0 0 1px
-        rgba(83,101,129,0.15);
-
-    z-index:
-        5;
-
+    mix-blend-mode: screen;
 }
 
-
-/* ==================================================
-   INTRO HINT
-================================================== */
-
-.intro-hint {
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        23px;
-
-    color:
-        var(--blue-text);
-
-    animation:
-        gentlePulse 2s ease-in-out infinite;
-
-}
-
-
-@keyframes gentlePulse {
-
-    0%,
-    100% {
-
-        opacity:
-            0.55;
-
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-    }
-
-}
-
-
-/* ==================================================
-   INTRO CD TAP
-================================================== */
-
-.intro-disc:hover {
-
-    transform:
-        scale(1.035);
-
-    box-shadow:
-
-        inset
-        0 0 0 1px
-        rgba(255,255,255,0.95),
-
-        inset
-        0 0 30px
-        rgba(255,255,255,0.80),
-
-        0 18px 55px
-        rgba(83,101,129,0.25),
-
-        0 0 75px
-        rgba(247,202,201,0.40);
-
-}
-
-
-.intro-disc.opening {
-
-    animation:
-        introSpin 1s ease forwards;
-
-}
-
-
-@keyframes introSpin {
-
-    0% {
-
-        transform:
-            scale(1)
-            rotate(0deg);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.08)
-            rotate(180deg);
-
-    }
-
-    100% {
-
-        transform:
-            scale(1)
-            rotate(360deg);
-
-    }
-
-}
-
-
-/* ==================================================
-   MAIN CONTENT
-================================================== */
-
-#main {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(18px);
-
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-
-}
-
-
-#main.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-/* ==================================================
-   MAIN CONTAINER
-================================================== */
-
-.container {
-
-    width:
-        90%;
-
-    max-width:
-        520px;
-
-    text-align:
-        center;
-
-    padding:
-        45px 25px;
-
-}
-
-
-/* ==================================================
-   SMALL HANDWRITTEN TITLE
-================================================== */
-
-.small-title {
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        25px;
-
-    color:
-        var(--rose-deep);
-
-    margin-bottom:
-        4px;
-
-    transform:
-        rotate(-2deg);
-
-}
-
-
-/* ==================================================
-   MAIN TITLE
-================================================== */
-
-h1 {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(45px, 13vw, 76px);
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -4px;
-
-    line-height:
-        0.95;
-
-    color:
-        var(--blue-deep);
-
-    margin-bottom:
-        7px;
-
-}
-
-
-/* ==================================================
-   SUBTITLE
-================================================== */
-
-.subtitle {
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        25px;
-
-    color:
-        var(--serenity);
-
-    margin-bottom:
-        38px;
-
-}
-
-
-/* ==================================================
-   MAIN CD
-================================================== */
-
-.main-disc {
-
-    width:
-        190px;
-
-    height:
-        190px;
-
-    margin:
-        0 auto 35px;
-
-    position:
-        relative;
-
-    border-radius:
-        50%;
+.cd-shine {
+    position: absolute;
+    inset: 10%;
+
+    border-radius: 50%;
 
     background:
+        linear-gradient(
+            45deg,
+            transparent 35%,
+            rgba(255,255,255,0.42) 49%,
+            transparent 60%
+        );
 
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.cd-hole {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 22%;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
         radial-gradient(
-            circle at 48% 47%,
-            rgba(255,255,255,0.95) 0%,
-            rgba(255,255,255,0.70) 2%,
-            transparent 3%
-        ),
-
-        conic-gradient(
-            from 0deg,
-
-            #F7CAC9,
-            #D9C7DC,
-            #91A8D0,
-            #C1D1E6,
-            #E8C5D0,
-            #F4D9C8,
-            #AABFDD,
-            #C9C4E1,
-            #F7CAC9
+            circle,
+            #faf8f5 0 20%,
+            rgba(255,255,255,0.94) 21% 33%,
+            rgba(91,82,101,0.18) 34% 37%,
+            transparent 38%
         );
 
-
     box-shadow:
+        inset 0 0 4px rgba(91,82,101,0.18);
 
-        inset
-        0 0 0 1px
-        rgba(255,255,255,0.85),
-
-        inset
-        0 0 28px
-        rgba(255,255,255,0.65),
-
-        0 13px 38px
-        rgba(83,101,129,0.18);
-
+    z-index: 5;
 }
 
+.cd-text {
+    position: absolute;
 
-.main-disc.spinning {
+    left: 50%;
+    top: 50%;
 
-    animation:
-        spin 0.55s linear infinite;
+    transform: translate(-50%, -50%);
 
+    z-index: 4;
+
+    font-family: "Caveat", cursive;
+    font-size: clamp(23px, 6vw, 31px);
+
+    color: rgba(91,82,101,0.72);
+
+    pointer-events: none;
 }
 
+.result-label {
+    margin-bottom: 8px;
 
-@keyframes spin {
+    font-family: "Caveat", cursive;
+    font-size: clamp(22px, 5vw, 27px);
 
-    from {
-
-        transform:
-            rotate(0deg);
-
-    }
-
-    to {
-
-        transform:
-            rotate(360deg);
-
-    }
-
+    color: #8c7d90;
 }
 
+.song-name {
+    min-height: 72px;
 
-/* ==================================================
-   QUESTION
-================================================== */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.question {
+    padding: 0 10px;
 
-    font-family:
-        "Caveat",
-        cursive;
+    font-size: clamp(25px, 7vw, 37px);
+    line-height: 1.1;
+    font-weight: 600;
 
-    font-size:
-        24px;
+    color: #665b70;
 
-    color:
-        var(--rose-deep);
-
-    margin-bottom:
-        5px;
-
+    letter-spacing: -0.025em;
 }
 
-
-/* ==================================================
-   SONG
-================================================== */
-
-#song {
-
-    min-height:
-        75px;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size:
-        clamp(25px, 7vw, 40px);
-
-    line-height:
-        1.05;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -1.5px;
-
-    color:
-        var(--blue-deep);
-
-    transition:
-        opacity 0.2s ease;
-
+.song-name.shuffle {
+    animation: songShuffle 0.16s linear infinite alternate;
 }
 
+.shuffle-button {
+    margin-top: 18px;
 
-/* ==================================================
-   ARTIST
-================================================== */
+    min-height: 50px;
+    min-width: 190px;
 
-#artist {
+    padding: 12px 24px;
 
-    min-height:
-        28px;
-
-    margin-top:
-        5px;
-
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        22px;
-
-    color:
-        var(--serenity);
-
-}
-
-
-/* ==================================================
-   SHUFFLE BUTTON
-================================================== */
-
-button {
-
-    margin-top:
-        25px;
-
-    padding:
-        14px 32px;
-
-    border:
-        1px solid
-        rgba(83,101,129,0.30);
-
-    border-radius:
-        100px;
+    border: 1px solid rgba(117,105,123,0.2);
+    border-radius: 999px;
 
     background:
-
         linear-gradient(
             135deg,
-            rgba(247,202,201,0.60),
-            rgba(145,168,208,0.55)
+            rgba(247,202,201,0.42),
+            rgba(145,168,208,0.32)
         );
 
-    color:
-        var(--blue-deep);
+    color: #655a6f;
 
-    font-family:
-        "Manrope",
-        sans-serif;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
 
-    font-size:
-        11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 
-    font-weight:
-        800;
-
-    letter-spacing:
-        3px;
-
-    cursor:
-        pointer;
+    cursor: pointer;
 
     box-shadow:
-        0 8px 25px
-        rgba(83,101,129,0.13);
+        0 8px 20px rgba(91,82,101,0.08);
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 
+    touch-action: manipulation;
 }
 
-
-button:hover {
-
-    transform:
-        translateY(-2px);
+.shuffle-button:hover {
+    transform: translateY(-2px);
 
     box-shadow:
-        0 12px 30px
-        rgba(83,101,129,0.20);
-
+        0 12px 25px rgba(91,82,101,0.13);
 }
 
-
-button:active {
-
-    transform:
-        scale(0.96);
-
+.shuffle-button:active {
+    transform: scale(0.97);
 }
 
+.spotify-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-/* ==================================================
-   SPOTIFY LINK
-================================================== */
+    width: min(270px, 88vw);
+    min-height: 50px;
 
-#spotify {
+    margin: 13px auto 0;
 
-    display:
-        none;
+    padding: 12px 22px;
 
-    margin-top:
-        22px;
+    border-radius: 999px;
 
-    text-decoration:
-        none;
+    background: #6d6276;
 
-    color:
-        var(--blue-text);
+    color: white;
 
-    font-family:
-        "Caveat",
-        cursive;
+    text-decoration: none;
 
-    font-size:
-        22px;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 10px 24px rgba(91,82,101,0.15);
 
     transition:
-        opacity 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 
+    touch-action: manipulation;
 }
 
+.spotify-button:hover {
+    transform: translateY(-2px);
 
-#spotify:hover {
+    background: #62576b;
 
-    opacity:
-        0.65;
-
+    box-shadow:
+        0 14px 28px rgba(91,82,101,0.2);
 }
 
+.spotify-button:active {
+    transform: scale(0.97);
+}
 
-/* ==================================================
-   FOOTER
-================================================== */
+.spotify-icon {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+}
+
+.preview-area {
+    margin-top: 17px;
+
+    min-height: 26px;
+}
+
+.preview-button {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: none;
+    background: transparent;
+
+    color: #877a8c;
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+.preview-button.visible {
+    display: inline-flex;
+}
+
+.preview-note {
+    display: none;
+
+    margin-top: 5px;
+
+    font-size: 9px;
+    letter-spacing: 0.08em;
+
+    color: #a49aa8;
+}
+
+.preview-note.visible {
+    display: block;
+}
 
 .footer {
+    margin-top: 32px;
 
-    margin-top:
-        45px;
+    font-family: "Caveat", cursive;
+    font-size: 18px;
 
-    font-family:
-        "Caveat",
-        cursive;
-
-    font-size:
-        18px;
-
-    color:
-        rgba(83,101,129,0.65);
-
+    color: #9b8d9e;
 }
 
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
-/* ==================================================
+@keyframes introAppear {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes softPulse {
+    0%, 100% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes songShuffle {
+    from {
+        opacity: 0.35;
+        transform: translateY(-2px);
+    }
+
+    to {
+        opacity: 0.85;
+        transform: translateY(2px);
+    }
+}
+
+.cd.spinning {
+    animation: spinCD 0.75s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes spinCD {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.04);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.intro-cd.opening {
+    animation: openingCD 0.9s ease;
+}
+
+@keyframes openingCD {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    50% {
+        transform: scale(1.06) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* =========================================================
    MOBILE
-================================================== */
+========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
-    .intro-disc {
-
-        width:
-            180px;
-
-        height:
-            180px;
-
+    .intro-screen {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
-    .main-disc {
-
-        width:
-            165px;
-
-        height:
-            165px;
-
+    .intro-sub {
+        margin-bottom: 25px;
     }
 
-    .subtitle {
-
-        margin-bottom:
-            28px;
-
+    .intro-cd-wrapper {
+        width: min(255px, 68vw);
     }
 
+    .intro-hint {
+        margin-top: 24px;
+    }
+
+    .cd-area {
+        width: min(275px, 70vw);
+        margin-top: 22px;
+        margin-bottom: 22px;
+    }
+
+    .song-name {
+        min-height: 62px;
+        font-size: clamp(24px, 8vw, 32px);
+    }
+
+    .shuffle-button,
+    .spotify-button {
+        min-height: 52px;
+    }
+
+    .footer {
+        margin-top: 25px;
+    }
+}
+
+@media (max-height: 700px) {
+
+    .intro-cd-wrapper {
+        width: min(220px, 53vh);
+    }
+
+    .intro-sub {
+        margin-bottom: 18px;
+    }
+
+    .intro-hint {
+        margin-top: 18px;
+    }
+
+    .cd-area {
+        width: min(240px, 52vh);
+        margin-top: 17px;
+        margin-bottom: 16px;
+    }
+
+    .footer {
+        margin-top: 20px;
+    }
 }
 
 </style>
-
 </head>
-
-
 
 <body>
 
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
-<!-- ==================================================
-     INTRO / GIFT SCREEN
-================================================== -->
-
-<section id="intro">
+<section class="intro-screen" id="introScreen">
 
     <div class="intro-content">
 
-
-        <div class="intro-note">
-
+        <div class="intro-small">
             a little something for you
-
         </div>
 
-
-        <div class="intro-title">
-
-            SEVENTEEN
-
-        </div>
-
-
-        <div class="intro-subtitle">
-
+        <div class="intro-main">
             13 members · 34 songs · 1 surprise
-
         </div>
 
+        <div class="intro-sub">
+            made with a little bit of love ♡
+        </div>
 
         <div
-            class="intro-disc"
-            id="introDisc"
+            class="intro-cd-wrapper"
+            id="introCD"
             onclick="openGift()"
+            role="button"
+            aria-label="Open your gift"
         >
 
-            <div class="disc-centre"></div>
+            <div class="intro-cd">
+
+                <div class="cd-label">
+                    ♡
+                </div>
+
+                <div class="cd-center"></div>
+
+            </div>
 
         </div>
-
 
         <div class="intro-hint">
-
             tap the CD to open your gift ♡
-
         </div>
 
+        <div class="intro-detail">
+            a tiny surprise awaits
+        </div>
 
     </div>
 
 </section>
 
 
-
-<!-- ==================================================
+<!-- =====================================================
      MAIN EXPERIENCE
-================================================== -->
+===================================================== -->
 
-<section
-    id="main"
-    class="page"
->
+<main class="main" id="main">
+
+    <div class="card">
+
+        <div class="eyebrow">
+            now playing...
+        </div>
+
+        <div class="title">
+            your random track
+        </div>
 
 
-<main class="container">
+        <!-- CD -->
+
+        <div class="cd-area">
+
+            <div class="cd" id="cd">
+
+                <div class="cd-shine"></div>
+
+                <div class="cd-text">
+                    ♡
+                </div>
+
+                <div class="cd-hole"></div>
+
+            </div>
+
+        </div>
 
 
-    <div class="small-title">
+        <!-- RESULT -->
 
-        now playing...
+        <div class="result-label">
+            your song is...
+        </div>
+
+        <div class="song-name" id="songName">
+            press shuffle
+        </div>
+
+
+        <!-- SHUFFLE -->
+
+        <button
+            class="shuffle-button"
+            id="shuffleButton"
+            onclick="chooseSong()"
+        >
+            shuffle ♡
+        </button>
+
+
+        <!-- PREVIEW -->
+
+        <div class="preview-area">
+
+            <button
+                class="preview-button"
+                id="previewButton"
+                onclick="togglePreview()"
+            >
+                <span id="previewIcon">▶</span>
+                <span id="previewText">play preview</span>
+            </button>
+
+            <div
+                class="preview-note"
+                id="previewNote"
+            >
+                30 sec preview
+            </div>
+
+        </div>
+
+
+        <!-- SPOTIFY -->
+
+        <a
+            class="spotify-button"
+            id="spotifyButton"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <svg
+                class="spotify-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.49 17.31a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.15a.75.75 0 1 1-.34-1.46c4.58-1.05 8.51-.64 11.67 1.29.35.21.46.67.25 1.07zm1.38-3.08a.94.94 0 0 1-1.29.31c-3.23-1.98-8.16-2.55-11.98-1.39a.94.94 0 1 1-.55-1.8c4.36-1.32 9.81-.68 13.52 1.6.43.26.57.83.3 1.28zm.12-3.21C15.12 8.8 8.44 8.57 4.58 9.74a1.13 1.13 0 1 1-.66-2.16c4.7-1.43 10.17-1.14 14.93 1.68a1.13 1.13 0 0 1-1.16 1.76z"/>
+            </svg>
+
+            ESCUCHAR EN SPOTIFY
+
+        </a>
+
+
+        <div class="footer">
+            34 possibilities · 1 random song ♡
+        </div>
 
     </div>
-
-
-    <h1>
-
-        SEVENTEEN
-
-    </h1>
-
-
-    <div class="subtitle">
-
-        your random track
-
-    </div>
-
-
-    <div
-        class="main-disc"
-        id="disc"
-    >
-
-        <div class="disc-centre"></div>
-
-    </div>
-
-
-    <div class="question">
-
-        your song is...
-
-    </div>
-
-
-    <div id="song">
-
-        🎲
-
-    </div>
-
-
-    <div id="artist"></div>
-
-
-    <button
-        onclick="randomSong()"
-    >
-
-        SHUFFLE
-
-    </button>
-
-
-    <br>
-
-
-    <a
-        id="spotify"
-        href="#"
-        target="_blank"
-    >
-
-        ▶ listen on spotify
-
-    </a>
-
-
-    <div class="footer">
-
-        34 possibilities · 1 random song
-
-    </div>
-
 
 </main>
 
-</section>
 
-
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
+/*
+==========================================================
+SONG DATABASE
+==========================================================
 
-/* ==================================================
-   34 SONGS
-================================================== */
+IMPORTANT:
+- "spotify" is the direct Spotify track URL when known.
+- "search" is used when a direct track ID is not available.
+- "preview" can contain a Spotify preview MP3 URL if one
+  is available.
+
+Spotify may return preview_url as null because the preview
+feature is deprecated. The page therefore handles songs
+with and without previews safely.
+
+==========================================================
+*/
 
 const songs = [
 
-
     {
-        name: "SUPER",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/SUPER%20SEVENTEEN"
+        title: "SUPER",
+        spotify: "https://open.spotify.com/search/SUPER%20SEVENTEEN"
     },
 
-
     {
-        name: "MAESTRO",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/MAESTRO%20SEVENTEEN"
+        title: "MAESTRO",
+        spotify: "https://open.spotify.com/search/MAESTRO%20SEVENTEEN"
     },
 
-
     {
-        name: "SOS",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/SOS%20SEVENTEEN"
+        title: "SOS",
+        spotify: "https://open.spotify.com/search/SOS%20SEVENTEEN"
     },
 
-
     {
-        name: "THUNDER",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/6oeMntjclWLoguzwj5ECTo"
+        title: "THUNDER",
+        spotify: "https://open.spotify.com/track/6oeMntjclWLoguzwj5ECTo"
     },
 
-
     {
-        name: "God of Music (Trot Remix)",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/God%20of%20Music%20Trot%20Remix%20SEVENTEEN"
+        title: "GOD OF MUSIC TROT VERSION",
+        spotify: "https://open.spotify.com/search/God%20of%20Music%20Trot%20Remix%20SEVENTEEN"
     },
 
-
     {
-        name: "VERY NICE",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/3nAUdBQxle8l1EeOxW3m0R"
+        title: "VERY NICE",
+        spotify: "https://open.spotify.com/track/3nAUdBQxle8l1EeOxW3m0R"
     },
 
-
     {
-        name: "MANSAE",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/5rIsrawNyPv1q8v11iwJsh"
+        title: "MANSAE",
+        spotify: "https://open.spotify.com/track/5rIsrawNyPv1q8v11iwJsh"
     },
 
-
     {
-        name: "FIGHTING",
-        artist: "BSS · Lee Young Ji",
-        url: "https://open.spotify.com/track/7eBpUuPnDTfbeP1P4P93CS"
+        title: "FIGHTING",
+        spotify: "https://open.spotify.com/track/7eBpUuPnDTfbeP1P4P93CS"
     },
 
-
     {
-        name: "DON QUIXOTE",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/DON%20QUIXOTE%20SEVENTEEN"
+        title: "DON QUIXOTE",
+        spotify: "https://open.spotify.com/search/DON%20QUIXOTE%20SEVENTEEN"
     },
 
-
     {
-        name: "CHEERS",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/1pdFdv8R6ezIAUUNkn785b"
+        title: "CHEERS",
+        spotify: "https://open.spotify.com/track/1pdFdv8R6ezIAUUNkn785b"
     },
 
-
     {
-        name: "CLAP",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/0pIJiHChaM9jlrlPCAP4aI"
+        title: "CLAP",
+        spotify: "https://open.spotify.com/track/0pIJiHChaM9jlrlPCAP4aI"
     },
 
-
     {
-        name: "_WORLD",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/2TLzrymJ9lpH2wXp1ub5Aj"
+        title: "_WORLD",
+        spotify: "https://open.spotify.com/track/2TLzrymJ9lpH2wXp1ub5Aj"
     },
 
-
     {
-        name: "HIT",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/HIT%20SEVENTEEN"
+        title: "HIT",
+        spotify: "https://open.spotify.com/search/HIT%20SEVENTEEN"
     },
 
-
     {
-        name: "rat race",
-        artist: "THE 8 · Vernon",
-        url: "https://open.spotify.com/search/rat%20race%20THE%208%20Vernon"
+        title: "RAT RACE",
+        spotify: "https://open.spotify.com/search/rat%20race%20V8"
     },
 
-
     {
-        name: "singasong",
-        artist: "THE 8 · Vernon",
-        url: "https://open.spotify.com/search/singasong%20THE%208%20Vernon"
+        title: "SINGASONG",
+        spotify: "https://open.spotify.com/search/singasong%20V8"
     },
 
-
     {
-        name: "girlsnboys",
-        artist: "THE 8 · Vernon",
-        url: "https://open.spotify.com/search/girlsnboys%20THE%208%20Vernon"
+        title: "GIRLSNBOYS",
+        spotify: "https://open.spotify.com/search/girlsnboys%20V8"
     },
 
-
     {
-        name: "Fiesta",
-        artist: "CxM",
-        url: "https://open.spotify.com/search/Fiesta%20CxM%20SEVENTEEN"
+        title: "FIESTA",
+        spotify: "https://open.spotify.com/search/Fiesta%20CxM"
     },
 
-
     {
-        name: "Worth it",
-        artist: "CxM",
-        url: "https://open.spotify.com/search/Worth%20it%20CxM%20SEVENTEEN"
+        title: "WORTH IT",
+        spotify: "https://open.spotify.com/search/Worth%20it%20CxM"
     },
 
-
     {
-        name: "Party Rock Rock",
-        artist: "Picheolin",
-        url: "https://open.spotify.com/search/Party%20Rock%20Rock%20Picheolin"
+        title: "PARTY ROCK ROCK",
+        spotify: "https://open.spotify.com/search/Party%20Rock%20Rock%20Picheolin"
     },
 
-
     {
-        name: "Mi-cheo Mi-cheo",
-        artist: "Picheolin",
-        url: "https://open.spotify.com/search/Mi-cheo%20Mi-cheo%20Picheolin"
+        title: "MI-CHEO MI-CHEO",
+        spotify: "https://open.spotify.com/search/Mi-cheo%20Mi-cheo%20Picheolin"
     },
 
-
     {
-        name: "PRETTY U",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/1117juaaAkSIUsQxTmmcKM"
+        title: "PRETTY U",
+        spotify: "https://open.spotify.com/track/1117juaaAkSIUsQxTmmcKM"
     },
 
-
     {
-        name: "HOME;RUN",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/HOME%3BRUN%20SEVENTEEN"
+        title: "HOME;RUN",
+        spotify: "https://open.spotify.com/search/HOME%20RUN%20SEVENTEEN"
     },
 
-
     {
-        name: "GOD OF MUSIC",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/4MTNimMDRyFZv37Thcktwa"
+        title: "GOD OF MUSIC",
+        spotify: "https://open.spotify.com/track/4MTNimMDRyFZv37Thcktwa"
     },
 
-
     {
-        name: "HOT",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/HOT%20SEVENTEEN"
+        title: "HOT",
+        spotify: "https://open.spotify.com/search/HOT%20SEVENTEEN"
     },
 
-
     {
-        name: "CBZ (Prime time)",
-        artist: "BSS",
-        url: "https://open.spotify.com/search/CBZ%20Prime%20time%20BSS"
+        title: "CBZ (PRIME TIME)",
+        spotify: "https://open.spotify.com/search/CBZ%20Prime%20Time%20BSS"
     },
 
-
     {
-        name: "Water",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/Water%20SEVENTEEN"
+        title: "WATER",
+        spotify: "https://open.spotify.com/search/WATER%20SEVENTEEN"
     },
 
-
     {
-        name: "BOOMBOOM",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/BOOMBOOM%20SEVENTEEN"
+        title: "BOOMBOOM",
+        spotify: "https://open.spotify.com/search/BOOMBOOM%20SEVENTEEN"
     },
 
-
     {
-        name: "LEFT & RIGHT",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/065yxZRBAsenRLZacB1uc2"
+        title: "LEFT & RIGHT",
+        spotify: "https://open.spotify.com/track/065yxZRBAsenRLZacB1uc2"
     },
 
-
     {
-        name: "CALL CALL CALL!",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/CALL%20CALL%20CALL%20SEVENTEEN"
+        title: "CALL CALL CALL!",
+        spotify: "https://open.spotify.com/search/CALL%20CALL%20CALL%20SEVENTEEN"
     },
 
-
     {
-        name: "ADORE U",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/Adore%20U%20SEVENTEEN"
+        title: "ADORE U",
+        spotify: "https://open.spotify.com/search/ADORE%20U%20SEVENTEEN"
     },
 
-
     {
-        name: "ROCK WITH YOU",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/Rock%20with%20you%20SEVENTEEN"
+        title: "ROCK WITH YOU",
+        spotify: "https://open.spotify.com/search/ROCK%20WITH%20YOU%20SEVENTEEN"
     },
 
-
     {
-        name: "HEY BUDDY",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/search/HEY%20BUDDY%20SEVENTEEN"
+        title: "HEY BUDDY",
+        spotify: "https://open.spotify.com/search/HEY%20BUDDY%20SEVENTEEN"
     },
 
-
     {
-        name: "TO YOU",
-        artist: "SEVENTEEN",
-        url: "https://open.spotify.com/track/25osmdhvjltPlN7gI2Javd"
+        title: "TO YOU",
+        spotify: "https://open.spotify.com/search/TO%20YOU%20SEVENTEEN"
     },
 
-
     {
-        name: "5, 4, 3 (Pretty woman)",
-        artist: "CxM · Lay Bankz",
-        url: "https://open.spotify.com/search/5%2C%204%2C%203%20Pretty%20woman%20CxM"
+        title: "5, 4, 3 (PRETTY WOMAN)",
+        spotify: "https://open.spotify.com/search/5%204%203%20Pretty%20woman%20CxM"
     }
-
 
 ];
 
 
-/* ==================================================
-   STATE
-================================================== */
+/*
+==========================================================
+ELEMENTS
+==========================================================
+*/
 
-let lastSong = null;
+const introScreen = document.getElementById("introScreen");
+const introCD = document.getElementById("introCD");
 
-let giftOpened = false;
+const main = document.getElementById("main");
+
+const cd = document.getElementById("cd");
+
+const songName = document.getElementById("songName");
+
+const shuffleButton = document.getElementById("shuffleButton");
+
+const spotifyButton = document.getElementById("spotifyButton");
+
+const previewButton = document.getElementById("previewButton");
+const previewIcon = document.getElementById("previewIcon");
+const previewText = document.getElementById("previewText");
+const previewNote = document.getElementById("previewNote");
 
 
-/* ==================================================
-   OPEN GIFT
-================================================== */
+let currentSong = null;
+let currentAudio = null;
+let isPlayingPreview = false;
+
+
+/*
+==========================================================
+OPEN GIFT
+==========================================================
+*/
 
 function openGift() {
 
-
-    if (giftOpened) {
-
+    if (introCD.classList.contains("opening")) {
         return;
-
     }
 
-
-    giftOpened = true;
-
-
-    const intro =
-        document.getElementById("intro");
-
-
-    const introDisc =
-        document.getElementById("introDisc");
-
-
-    const main =
-        document.getElementById("main");
-
-
-    introDisc.classList.add(
-        "opening"
-    );
-
+    introCD.classList.add("opening");
 
     setTimeout(() => {
 
+        introScreen.classList.add("hidden");
 
-        intro.classList.add(
-            "hidden"
-        );
+        main.classList.add("visible");
 
+        setTimeout(() => {
+            chooseSong();
+        }, 500);
 
-        main.classList.add(
-            "visible"
-        );
-
-
-    }, 650);
-
+    }, 700);
 }
 
 
-/* ==================================================
-   RANDOM SONG
-================================================== */
+/*
+==========================================================
+RANDOM SONG
+==========================================================
+*/
 
-function randomSong() {
+function chooseSong() {
 
+    stopPreview();
 
-    const disc =
-        document.getElementById("disc");
+    shuffleButton.disabled = true;
 
+    songName.classList.add("shuffle");
 
-    const songElement =
-        document.getElementById("song");
+    cd.classList.remove("spinning");
 
+    /*
+    Force browser reflow so animation can restart.
+    */
+    void cd.offsetWidth;
 
-    const artistElement =
-        document.getElementById("artist");
-
-
-    const spotifyElement =
-        document.getElementById("spotify");
-
-
-    disc.classList.add(
-        "spinning"
-    );
+    cd.classList.add("spinning");
 
 
-    spotifyElement.style.display =
-        "none";
-
+    /*
+    Pick random song.
+    */
 
     let randomIndex;
 
-    let selectedSong;
-
-
     do {
-
-
-        randomIndex =
-            Math.floor(
-                Math.random()
-                *
-                songs.length
-            );
-
-
-        selectedSong =
-            songs[randomIndex];
-
-
+        randomIndex = Math.floor(Math.random() * songs.length);
     }
 
     while (
-
         songs.length > 1 &&
-
-        selectedSong.name
-        ===
-        lastSong
-
+        songs[randomIndex] === currentSong
     );
 
 
-    lastSong =
-        selectedSong.name;
+    currentSong = songs[randomIndex];
 
 
+    /*
+    Small shuffle animation.
+    */
 
-    /* ==============================================
-       SHUFFLE ANIMATION
-    ============================================== */
+    let counter = 0;
 
+    const shuffleInterval = setInterval(() => {
 
-    const shuffleInterval =
+        const temporary =
+            songs[
+                Math.floor(
+                    Math.random() * songs.length
+                )
+            ];
 
-        setInterval(() => {
+        songName.textContent = temporary.title;
 
+        counter++;
 
-            const fakeSong =
+        if (counter >= 10) {
 
-                songs[
-                    Math.floor(
-                        Math.random()
-                        *
-                        songs.length
-                    )
-                ];
+            clearInterval(shuffleInterval);
 
+            songName.textContent = currentSong.title;
 
-            songElement.style.opacity =
-                "0";
+            songName.classList.remove("shuffle");
 
+            updateSpotifyButton();
 
-            setTimeout(() => {
+            updatePreview();
 
+            shuffleButton.disabled = false;
+        }
 
-                songElement.textContent =
-                    fakeSong.name;
-
-
-                artistElement.textContent =
-                    fakeSong.artist;
-
-
-                songElement.style.opacity =
-                    "1";
-
-
-            }, 80);
-
-
-        }, 130);
-
-
-
-    /* ==============================================
-       STOP
-    ============================================== */
-
-
-    setTimeout(() => {
-
-
-        clearInterval(
-            shuffleInterval
-        );
-
-
-        songElement.style.opacity =
-            "0";
-
-
-        setTimeout(() => {
-
-
-            songElement.textContent =
-                selectedSong.name;
-
-
-            artistElement.textContent =
-                selectedSong.artist;
-
-
-            songElement.style.opacity =
-                "1";
-
-
-            disc.classList.remove(
-                "spinning"
-            );
-
-
-            spotifyElement.href =
-                selectedSong.url;
-
-
-            spotifyElement.style.display =
-                "inline-block";
-
-
-        }, 150);
-
-
-    }, 1500);
-
+    }, 85);
 }
 
 
+/*
+==========================================================
+SPOTIFY BUTTON
+==========================================================
+*/
+
+function updateSpotifyButton() {
+
+    if (!currentSong) {
+        return;
+    }
+
+    spotifyButton.href = currentSong.spotify;
+}
+
+
+/*
+==========================================================
+PREVIEW
+==========================================================
+*/
+
+function updatePreview() {
+
+    /*
+    Remove old preview.
+    */
+
+    stopPreview();
+
+    previewButton.classList.remove("visible");
+    previewNote.classList.remove("visible");
+
+    previewText.textContent = "play preview";
+    previewIcon.textContent = "▶";
+
+
+    /*
+    If this particular song has a preview URL,
+    create an audio element.
+
+    Spotify may return null / unavailable previews,
+    so this condition is intentionally optional.
+    */
+
+    if (
+        currentSong &&
+        currentSong.preview &&
+        currentSong.preview.trim() !== ""
+    ) {
+
+        currentAudio = new Audio(currentSong.preview);
+
+        currentAudio.preload = "auto";
+
+        currentAudio.volume = 0.75;
+
+        currentAudio.addEventListener(
+            "ended",
+            () => {
+
+                isPlayingPreview = false;
+
+                previewIcon.textContent = "▶";
+                previewText.textContent = "play preview";
+
+            }
+        );
+
+        currentAudio.addEventListener(
+            "error",
+            () => {
+
+                stopPreview();
+
+                previewButton.classList.remove("visible");
+                previewNote.classList.remove("visible");
+
+            }
+        );
+
+
+        previewButton.classList.add("visible");
+
+        previewNote.classList.add("visible");
+
+
+        /*
+        Try autoplay.
+
+        Mobile browsers may block autoplay.
+        If blocked, the preview button remains available
+        so the user can start it manually.
+        */
+
+        currentAudio
+            .play()
+            .then(() => {
+
+                isPlayingPreview = true;
+
+                previewIcon.textContent = "Ⅱ";
+                previewText.textContent = "pause preview";
+
+            })
+            .catch(() => {
+
+                isPlayingPreview = false;
+
+                previewIcon.textContent = "▶";
+                previewText.textContent = "play preview";
+
+            });
+
+    }
+}
+
+
+/*
+==========================================================
+PLAY / PAUSE PREVIEW
+==========================================================
+*/
+
+function togglePreview() {
+
+    if (!currentAudio) {
+        return;
+    }
+
+
+    if (isPlayingPreview) {
+
+        currentAudio.pause();
+
+        isPlayingPreview = false;
+
+        previewIcon.textContent = "▶";
+        previewText.textContent = "play preview";
+
+    }
+
+    else {
+
+        currentAudio
+            .play()
+            .then(() => {
+
+                isPlayingPreview = true;
+
+                previewIcon.textContent = "Ⅱ";
+                previewText.textContent = "pause preview";
+
+            })
+            .catch(() => {
+
+                isPlayingPreview = false;
+
+                previewIcon.textContent = "▶";
+                previewText.textContent = "play preview";
+
+            });
+
+    }
+}
+
+
+/*
+==========================================================
+STOP PREVIEW
+==========================================================
+*/
+
+function stopPreview() {
+
+    if (currentAudio) {
+
+        currentAudio.pause();
+
+        currentAudio.currentTime = 0;
+
+        currentAudio.src = "";
+
+        currentAudio = null;
+    }
+
+    isPlayingPreview = false;
+}
+
+
+/*
+==========================================================
+KEYBOARD SUPPORT
+==========================================================
+*/
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Enter" &&
+        !introScreen.classList.contains("hidden")
+    ) {
+
+        openGift();
+
+    }
+
+});
+
+
+/*
+==========================================================
+INITIAL STATE
+==========================================================
+*/
+
+spotifyButton.href = "#";
+
 </script>
 
-
 </body>
-
 </html>
